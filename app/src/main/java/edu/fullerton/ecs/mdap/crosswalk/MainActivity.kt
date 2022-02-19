@@ -12,11 +12,19 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val name: EditText = findViewById(R.id.name)
+        val address: EditText = findViewById(R.id.address)
+
 
         val addButton: Button = findViewById(R.id.add)
         addButton.setOnClickListener {
-            val toast = Toast.makeText(this, "Adding ${name.text}.", Toast.LENGTH_SHORT)
+            val toast = Toast.makeText(this, "Adding ${name.text} @ ${(address.text)}", Toast.LENGTH_SHORT)
             toast.show()
+
+        }
+        clearButton.setOnClickListener {
+            val toast = Toast.makeText(this, "Clearing Fields!", Toast.LENGTH_SHORT)
+            toast.show()
+
         }
     }
 }
