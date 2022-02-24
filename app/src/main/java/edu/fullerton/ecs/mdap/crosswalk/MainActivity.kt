@@ -17,14 +17,19 @@ class MainActivity : AppCompatActivity() {
 
         val addButton: Button = findViewById(R.id.add)
         addButton.setOnClickListener {
-            val toast = Toast.makeText(this, "Adding ${name.text} @ ${(address.text)}", Toast.LENGTH_SHORT)
+            // val toast = Toast.makeText(this, "Adding ${name.text}.", Toast.LENGTH_SHORT)  || Old, used for one address
+            val toast = Toast.makeText(this, "Adding ${name.text} @ ${(address.text)}", Toast.LENGTH_SHORT) // adds intersection
             toast.show()
 
         }
+        val clearButton: Button = findViewById(R.id.clear)
         clearButton.setOnClickListener {
-            val toast = Toast.makeText(this, "Clearing Fields!", Toast.LENGTH_SHORT)
+            val toast = Toast.makeText(this, "Clearing Fields!", Toast.LENGTH_SHORT) // mounts clear, adds toast when used
+            address.setText(null) // archaic way derrived from Java, uses default setters to override as NULL
+            name.setText(null)
             toast.show()
 
         }
+
     }
 }
